@@ -57,11 +57,19 @@ class WelcomeTest {
 		assertEquals("Hello, Jerry and Tom. AND HELLO, AMY AND BENOIT !", Welcome.welcome("AMY,jerry,tom,BENOIT"));
 	}
 	
-	//j'ai changé le nom de test car la consigne a été changé 
+	//jai change le nom de test car la consigne a ete change 
 	@Test
 	void ITER_7() {
 		assertEquals("Hello, Bob, Amy and Jerry", Welcome.welcome("bob, amy, jerry"));
 		assertEquals("Hello, Bob and Jerry. AND HELLO, AMY AND JACK !", Welcome.welcome("bob, AMY, jerry, JACK"));
 		assertEquals("Hello, Tom. AND HELLO, BOB AND JERRY !", Welcome.welcome("Tom, BOB,JERRY"));
+	}
+	
+	@Test
+	//pas de modifications necessaires au code a ITER_8 car il gerait les espaces 
+	void ITER_8() {
+		assertEquals("Hello, Bob and Amy", Welcome.welcome("bob,       amy"));
+		assertEquals("Hello, Bob, Amy and Tom", Welcome.welcome("bob,       amy,       Tom"));
+		assertEquals("Hello, Tom and Jerry. AND HELLO, BOB AND AMY !", Welcome.welcome("    tom  , jerry, BOB, AMY    "));
 	}
 }
