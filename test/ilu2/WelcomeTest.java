@@ -72,4 +72,12 @@ class WelcomeTest {
 		assertEquals("Hello, Bob, Amy and Tom", Welcome.welcome("bob,       amy,       Tom"));
 		assertEquals("Hello, Tom and Jerry. AND HELLO, BOB AND AMY !", Welcome.welcome("    tom  , jerry, BOB, AMY    "));
 	}
+	
+	@Test
+	void ITER_9() {
+		assertEquals("Hello, Bob(x3) and Amy. AND HELLO, JERRY(x2) !", Welcome.welcome("bob, JERRY, amy, bob, JERRY, bob"));
+		assertEquals("Hello, Tom(x2), Jerry(x3) and Jack(x2). AND HELLO, AMY(x2), JACK AND BOB !", Welcome.welcome(" tom, AMY, jerry, JACK, BOB, jack, jack, tom, jerry, AMY, jerry"));
+		assertEquals("Hello, Ilu(x5)", Welcome.welcome(" ilu,    Ilu,    ilu,    ilu,  Ilu"));
+		assertEquals("Hello, Ilu(x3) and Test. AND HELLO, INFORMATIQUE(x2) !", Welcome.welcome("ilu, INFORMATIQUE, test, Ilu, INFORMATIQUE,     ilu"));
+	}
 }
